@@ -1,0 +1,39 @@
+def plusFrequent2(x):
+    """
+        Renvoie la lettre qui est la plus utilisée dans une chaine de caractère
+        :param x: (str) La chaine de caractère que l'on veut verifier
+        :return: (str) La lettre la plus utilisée dans la chaine x
+        
+        CU : Aucune
+        
+        Exemples :
+        
+        >>> plusFrequent2('bonjour')
+        'o'
+        
+        >>> plusFrequent2('kayak')
+        'a'
+        
+        >>> plusFrequent2('')
+        ''
+    """
+    R = ""
+    i = 0
+    alphabet = "abcdefghijklmnopqrstuvwxyz"
+    for f in alphabet:
+        for e in x:
+            
+            if f == e:
+                if i == 0:
+                    if nbreOccurrences(x, f) > nbreOccurrences(x, R):
+                        R = f
+                    else:
+                        R = R
+                else:
+                    if nbreOccurrences(x, f) > nbreOccurrences(x, R):
+                        R = f
+                    else:
+                        R = R
+        
+        i = i + 1
+    return R
